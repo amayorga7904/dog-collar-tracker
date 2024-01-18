@@ -8,10 +8,17 @@ export default function NewOrderPage() {
   useEffect(function() {
     console.log('new order page is rendered')
   })
+
+  useEffect(function() {
+    console.log('useEffect runs when storeItems changes)')
+  }, [storeItems])
+
+
+
   return (
     <>
       <h1>NewOrderPage</h1>
-      <button onClick={setStoreItems}>Trigger re-render</button>
+      <button onClick={() => setStoreItems(Date.now())}>Trigger re-render</button>
     </>
   );
 }
